@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header class="z-depth-2">
+        <nav>
+            <div class="nav-wrapper teal lighten-2">
+                <a href="#" class="brand-logo center">FOODME</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Popular</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <aside class="col s3 left-bar">
+            <form class="filter" action="index.html" method="get">
+                <label for="allergies">Allergic Restrictions
+          <select class="allergies" name="Allergies">
+          </select>
+        </label>
+                <label for="protein-preference">Protein Preference
+          <select class="protein" name="Protein">
+          </select>
+        </label>
+                <label for="cuisine">Cuisine
+          <select class="cuisine" name="Cuisine">
+          </select>
+        </label>
+                <button class="btn waves-effect amber darken-1" type="submit" name="action">Apply
+        </button>
+            </form>
+        </aside>
+        <section class="col s6 container">
+            <figure class="imageContainer">
+                <img class="responsive-img" src="http://baconmockup.com/600/300/" />
+            </figure>
+            <div class="arrows">
+                <i class="medium material-icons">skip_next</i>
+            </div>
+            <figcaption class="z-depth-2">
+                <h2><a href="" target="newTab">Tasty burger!</a></h2>
+                <div class="specs">
+                    <i class="small material-icons">av_timer</i>
+                    <p>15 minutes</p>
+                </div>
+                <p>Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides,
+                    I've already been through too much shit this morning over this case to hand it over to your dumb ass.
+                    <p>
+
+
+            </figcaption>
+        </section>
+        <aside class="col s3 right-bar">
+            <form class="login" action="index.html" method="get">
+                <input type="text" name="username" placeholder="Enter Username">
+                <input type="text" name="password" placeholder="Enter Password">
+                <button class="btn waves-effect amber darken-1" type="submit" name="action">Login
+                  <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </aside>
+    </main>
+    <footer class="amber darken-1">
+        <small>Michael Roque's Q1 Project</small>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js">
+    </script>
+</body>
+
+</html>
