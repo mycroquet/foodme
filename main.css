@@ -1,13 +1,28 @@
 body {
     display: flex;
+    background-color: #F0C695;
     min-height: 100vh;
     flex-direction: column;
 }
 
 header {
-    background-color: #F3A712;
+    background-color: #FD8B1E;
     display: flex;
+    width: 100vw;
+    padding: 1em;
     justify-content: center;
+}
+
+.logo-food {
+    display: inline-block;
+    color: #910606;
+    font-family: 'Unica One', cursive;
+}
+
+.logo-me {
+    font-family: 'Sacramento', cursive;
+    display: inline-block;
+    color: #910606;
 }
 
 .arrows {
@@ -31,7 +46,7 @@ header {
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    margin-right: 4em;
+    margin-right: 3em;
     margin-bottom: 1em;
 }
 
@@ -43,14 +58,19 @@ p {
 
 h1 {
     text-transform: uppercase;
+    margin: 0;
 }
 
-h2 a {
-    color: #29335C;
+.flow-text {
+    font-size: 1em !important;
 }
 
-h2 a:hover {
-    color: #ffb300;
+h3 a {
+    color: #910606;
+}
+
+h3 a:hover {
+    color: #E04219;
 }
 
 main {
@@ -75,7 +95,8 @@ figcaption {
     flex-direction: column;
     align-self: center;
     padding: 0 10px;
-    background-color: #669BBC;
+    margin-bottom: 15px;
+    background-color: #F7C549;
     width: 60vw;
 }
 
@@ -84,7 +105,7 @@ figcaption {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    background-color: #29335C;
+    background-color: #789F47;
     height: 100vh;
     width: 20vw;
 }
@@ -93,7 +114,7 @@ figcaption {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #29335C;
+    background-color: #789F47;
     padding: 15px;
     height: 100vh;
     width: 20vw;
@@ -101,41 +122,69 @@ figcaption {
 
 .filter {
     display: block;
+    color: #F0E9DE;
     width: 80%;
     margin: 0 auto;
 }
 
 label {
-    color: white;
+    color: #F0E9DE;
 }
 
 select {
     display: block;
-    color: #4db6ac;
+    color: #FD8B1E;
     margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #E04219 !important;
+}
+
+.login {
+    color: #F0C695;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+}
+
+img {
+    display: flex;
+    /*width: auto;
+    height: auto;*/
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    /*width: 60vw;*/
+    height: 60vh;
+    margin-bottom: 10px;
 }
 
 .imageWrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 60vw;
+    /*width: 60vw;*/
     margin-bottom: 0;
     max-height: 60vh;
+}
+
+#recipeName {
+    font-family: 'Unica One', cursive;
 }
 
 footer {
     display: flex;
     align-self: baseline;
     width: 100vw;
+    background-color: #ABAA6E;
 }
 
 small {
-    padding: 2em;
+    padding: 4em;
 }

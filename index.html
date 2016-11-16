@@ -5,83 +5,96 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento|Unica+One" rel="stylesheet">
 </head>
 
 <body>
     <header class="z-depth-2">
-        <nav>
-            <div class="nav-wrapper teal lighten-3">
-                <a href="#" class="brand-logo center">FOODME</a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center"><h1 class="logo-food">FOOD</h1></a>
+            <a href="#" class="brand-logo center"><h1 class="logo-me">ME</h1></a>
+            <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a href="#">Favorites</a></li>
                     <li><a href="#">Register</a></li>
                     <li><a href="#">Popular</a></li>
-                </ul>
-            </div>
-        </nav>
+                </ul> -->
+        </div>
     </header>
     <main>
         <aside class="col s3 left-bar">
             <form class="filter" action="index.html" method="get">
-                <label for="allergies">Allergic Restrictions
+                <!-- <label for="allergies">Allergic Restrictions
           <select class="allergies" name="Allergies">
           </select>
-        </label>
+        </label> -->
                 <label for="protein-preference">Protein Preference
           <select class="protein" name="Protein">
           </select>
         </label>
-                <label for="cuisine">Cuisine
+                <!-- <label for="cuisine">Cuisine
           <select class="cuisine" name="Cuisine">
           </select>
-        </label>
-                <button class="btn waves-effect amber darken-1" type="submit" name="action">Apply
+        </label> -->
+                <button class="btn waves-effect" type="button" name="action">Apply
         </button>
             </form>
         </aside>
         <section class="col s6 container">
-            <figure class="imageWrapper">
-                <img id="recipeImage" class="responsive-img z-depth-3" src="" />
-            </figure>
+            <article class="img-container">
+                <figure class="imageWrapper">
+                    <img id="recipeImage" class="responsive-img z-depth-3" src="" />
+                </figure>
+            </article>
             <div class="arrows">
                 <i class="medium material-icons">skip_next</i>
             </div>
-            <figcaption class="z-depth-2">
-                <h2 class="truncate"><a id="recipeName" href="" target="newTab"></a></h2>
+            <figcaption class="z-depth-3">
+                <h3 class="truncate"><a id="recipeName" href="" target="newTab"></a></h3>
                 <div class="specs">
-                  <div class="spec-icons" value="servings">
-                    <i class="small material-icons">perm_identity</i>
-                    <p id="servings"></p>
-                  </div>
-                  <div class="spec-icons" value="cooktime">
-                    <i class="small material-icons">av_timer</i>
-                    <p id="ready"></p>
-                  </div>
-                  <div class="spec-icons" value="isVegan">
-                    <i class="small material-icons">invert_colors</i>
-                    <p>Vegan</p>
-                  </div>
-                  <div class="spec-icons" value="isGlutenFree">
-                    <i class="small material-icons">not_interested</i>
-                    <p>Gluten Free</p>
-                  </div>
+                    <div class="spec-icons">
+                        <i class="small material-icons">people</i>
+                        <p id="servings"></p>
+                    </div>
+                    <div class="spec-icons">
+                        <i class="small material-icons">av_timer</i>
+                        <p id="ready"></p>
+                    </div>
+                    <div id="isVegan" class="spec-icons">
+                        <i class="small material-icons">invert_colors</i>
+                        <p>Vegan</p>
+                    </div>
+                    <div id="isVegetarian" class="spec-icons">
+                        <i class="small material-icons">local_florist</i>
+                        <p>Vegetarian</p>
+                    </div>
+                    <div id="isGlutenFree" class="spec-icons">
+                        <i class="small material-icons">not_interested</i>
+                        <p>Gluten Free</p>
+                    </div>
+                    <div id="isDairyFree" class="spec-icons">
+                        <i class="small material-icons">not_interested</i>
+                        <p>Dairy Free</p>
+                    </div>
+                    <!-- <div class="spec-icons">
+                        <a id="seeRecipe" href="" target="newTab">
+                        <i class="small material-icons">description</i></a>
+                        <p>See Recipe</p>
+                    </div> -->
                 </div>
                 <p id="instructions" class="flow-text"></p>
             </figcaption>
         </section>
         <aside class="col s3 right-bar">
             <form class="login" action="index.html" method="get">
-                <input type="text" name="username" placeholder="Enter Username">
-                <input type="text" name="password" placeholder="Enter Password">
-                <button class="btn waves-effect amber darken-1" type="submit" name="action">Login
+                <input type="text" id="user" placeholder="Enter Name">
+                <button id="submit" class="btn waves-effect" type="button" name="action">Login
                   <i class="material-icons right">send</i>
                 </button>
             </form>
         </aside>
     </main>
-    <footer class="amber darken-1">
+    <footer>
         <small>Michael Roque's Q1 Project</small>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
