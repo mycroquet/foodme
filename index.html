@@ -12,7 +12,7 @@
 <body>
     <header class="z-depth-2">
         <nav>
-            <div class="nav-wrapper teal lighten-2">
+            <div class="nav-wrapper teal lighten-3">
                 <a href="#" class="brand-logo center">FOODME</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a href="#">Favorites</a></li>
@@ -42,23 +42,33 @@
             </form>
         </aside>
         <section class="col s6 container">
-            <figure class="imageContainer">
-                <img class="responsive-img" src="http://baconmockup.com/600/300/" />
+            <figure class="imageWrapper">
+                <img id="recipeImage" class="responsive-img z-depth-3" src="" />
             </figure>
             <div class="arrows">
                 <i class="medium material-icons">skip_next</i>
             </div>
             <figcaption class="z-depth-2">
-                <h2><a href="" target="newTab">Tasty burger!</a></h2>
+                <h2 class="truncate"><a id="recipeName" href="" target="newTab"></a></h2>
                 <div class="specs">
+                  <div class="spec-icons" value="servings">
+                    <i class="small material-icons">perm_identity</i>
+                    <p id="servings"></p>
+                  </div>
+                  <div class="spec-icons" value="cooktime">
                     <i class="small material-icons">av_timer</i>
-                    <p>15 minutes</p>
+                    <p id="ready"></p>
+                  </div>
+                  <div class="spec-icons" value="isVegan">
+                    <i class="small material-icons">invert_colors</i>
+                    <p>Vegan</p>
+                  </div>
+                  <div class="spec-icons" value="isGlutenFree">
+                    <i class="small material-icons">not_interested</i>
+                    <p>Gluten Free</p>
+                  </div>
                 </div>
-                <p>Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides,
-                    I've already been through too much shit this morning over this case to hand it over to your dumb ass.
-                    <p>
-
-
+                <p id="instructions" class="flow-text"></p>
             </figcaption>
         </section>
         <aside class="col s3 right-bar">
