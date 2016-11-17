@@ -1,3 +1,6 @@
+var lastRecipeArray = []
+var currentRecipe = -1
+
 function getRandomRecipe() {
     $.ajax({
         url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false',
@@ -5,68 +8,105 @@ function getRandomRecipe() {
             'X-Mashape-Key': 'GOGW0xr8qymshxN4nRHm0XFgvOfJp1zMGFujsnMBwfLBfmA1pY',
             Accept: 'application/json'
         },
-        success: recipeImage,
+        success: recipe,
         type: 'GET',
     })
 
-    function recipeImage(data) {
-        var recipeName = data.recipes[0].title
-        var ingredients = data.recipes[0].extendedIngredients[0]
-        var image = data.recipes[0].image
-        var instructions = data.recipes[0].instructions
-        var link = data.recipes[0].sourceUrl
-        var servings = data.recipes[0].servings
-        var readyIn = data.recipes[0].readyInMinutes
-        var isVegan = data.recipes[0].vegan
-        var isGlutenFree = data.recipes[0].glutenFree
-        var isVegetarian = data.recipes[0].vegetarian
-        var isDairyFree = data.recipes[0].dairyFree
 
-        $('#recipeImage').attr('src', image);
-        $('#recipeName').attr('href', link);
-        $('#recipeName').text(recipeName)
-        $('#instructions').text(instructions)
-        $('#servings').text(servings + ' servings')
-        $('#ready').text('Ready in ' + readyIn + ' minutes')
-        $('#seeRecipe').attr('href', link);
+    function recipe(data) {
+        var recipeInfo = {
+            recipeName: data.recipes[0].title,
+            ingredients: data.recipes[0].extendedIngredients[0],
+            image: data.recipes[0].image,
+            instructions: data.recipes[0].instructions,
+            link: data.recipes[0].sourceUrl,
+            servings: data.recipes[0].servings,
+            readyIn: data.recipes[0].readyInMinutes,
+            isVegan: data.recipes[0].vegan,
+            isGlutenFree: data.recipes[0].glutenFree,
+            isVegetarian: data.recipes[0].vegetarian,
+            isDairyFree: data.recipes[0].dairyFree
+        }
+        lastRecipeArray.push(recipeInfo)
+        currentRecipe++
+        console.log(lastRecipeArray);
 
+        $('#recipeImage').attr('src', recipeInfo.image);
+        $('#recipeName').attr('href', recipeInfo.link);
+        $('#recipeName').text(recipeInfo.recipeName)
+        $('#instructions').text(recipeInfo.instructions)
+        $('#servings').text(recipeInfo.servings + ' servings')
+        $('#ready').text('Ready in ' + recipeInfo.readyIn + ' minutes')
+        // $('#seeRecipe').attr('href', recipeInfo.link);
 
-        if (isVegan === false) {
+        // Controls which icons appear in figcaption
+        if (recipeInfo.isVegan === false) {
             $('#isVegan').css('display', 'none')
         } else {
             $('#isVegan').css('display', 'flex')
         }
-        if (isGlutenFree === false) {
+        if (recipeInfo.isGlutenFree === false) {
             $('#isGlutenFree').css('display', 'none')
         } else {
             $('#isGlutenFree').css('display', 'flex')
         }
-        if (isVegetarian === false) {
+        if (recipeInfo.isVegetarian === false) {
             $('#isVegetarian').css('display', 'none')
         } else {
             $('#isVegetarian').css('display', 'flex')
         }
-        if (isGlutenFree === false) {
+        if (recipeInfo.isDairyFree === false) {
             $('#isDairyFree').css('display', 'none')
         } else {
             $('#isDairyFree').css('display', 'flex')
         }
     }
-    console.log(isVegan);
-    console.log(isGlutenFree);
-
 }
-
-$('.arrows').click(function() {
-    getRandomRecipe()
-});
-
 getRandomRecipe()
 
+// Go to next/last recipe
+$('.arrow-next').click(function() {
 
-var $myUser = $('.user').val()
+    if (currentRecipe === lastRecipeArray.length - 1) {
+        console.log(lastRecipeArray.length - 1);
+        getRandomRecipe()
+    } else {
+        currentRecipe++
+        nextRecipe(lastRecipeArray[currentRecipe])
+    }
+
+    // check to see if currentRecipe is the length of the lastRecipeArray - 1
+    // if not increment currentRecipe and set recipe from array
+    // else get a new random recipe
+});
+
+$('.arrow-previous').click(function() {
+    currentRecipe--
+    nextRecipe(lastRecipeArray[currentRecipe])
+        // recipeInfo = lastRecipeArray[currentRecipe]
+        // counter = (counter + 1) % lastRecipeArray.length;
+    console.log(recipeInfo);
+    if (currentRecipe-- === currentRecip  e[0]) {
+        $('.arrow-previous').css('display', 'none')
+    }
+})
+
+function nextRecipe(recipeInfo) {
+    console.log(recipeInfo);
+    $('#recipeImage').attr('src', recipeInfo.image);
+    $('#recipeName').attr('href', recipeInfo.link);
+    $('#recipeName').text(recipeInfo.recipeName)
+    $('#instructions').text(recipeInfo.instructions)
+    $('#servings').text(recipeInfo.servings + ' servings')
+    $('#ready').text('Ready in ' + recipeInfo.readyIn + ' minutes')
+    // $('#seeRecipe').attr('href', recipeInfo.link);
+}
 
 
-$('#submit').click(localStorage.setItem('name', $myUser))
-
-console.log($myUser);
+// Store user name
+// var $myUser = $('.user').val()
+//
+//
+// $('#submit').click(localStorage.setItem('name', $myUser))
+//
+// console.log($myUser);

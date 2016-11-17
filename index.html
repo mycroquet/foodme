@@ -28,8 +28,12 @@
           <select class="allergies" name="Allergies">
           </select>
         </label> -->
-                <label for="protein-preference">Protein Preference
+                <label for="protein-preference">Filter Results
           <select class="protein" name="Protein">
+            <option value="option" disabled selected>Select...</option>
+            <option id="vegan" value="option">Vegan</option>
+            <option id="glutenFree" value="option">Gluten Free</option>
+            <option id="dairyFree" value="option">Dairy Free</option>
           </select>
         </label>
                 <!-- <label for="cuisine">Cuisine
@@ -47,7 +51,12 @@
                 </figure>
             </article>
             <div class="arrows">
-                <i class="medium material-icons">skip_next</i>
+                <div class="arrow-previous">
+                    <i class="medium material-icons">skip_previous</i>
+                </div>
+                <div class="arrow-next">
+                    <i class="medium material-icons">skip_next</i>
+                </div>
             </div>
             <figcaption class="z-depth-3">
                 <h3 class="truncate"><a id="recipeName" href="" target="newTab"></a></h3>

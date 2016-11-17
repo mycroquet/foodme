@@ -26,9 +26,24 @@ header {
 }
 
 .arrows {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  align-items: center;
+}
+
+.arrow-next {
     display: flex;
-    flex-direction: row;
-    width: 60vw;
+    flex-direction: column;
+    width: 30vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-previous {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
     justify-content: center;
     align-items: center;
 }
@@ -63,6 +78,10 @@ h1 {
 
 .flow-text {
     font-size: 1em !important;
+}
+
+h3 {
+  font-size: 2.2rem !important;
 }
 
 h3 a {
@@ -169,9 +188,10 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /*width: 60vw;*/
+    width: 60vw;
+    position: relative;
     margin-bottom: 0;
-    max-height: 60vh;
+    /*max-height: 60vh;*/
 }
 
 #recipeName {
