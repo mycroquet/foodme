@@ -86,7 +86,7 @@ $('.arrow-previous').click(function() {
         // recipeInfo = lastRecipeArray[currentRecipe]
         // counter = (counter + 1) % lastRecipeArray.length;
     console.log(recipeInfo);
-    if (currentRecipe-- === currentRecip  e[0]) {
+    if (currentRecipe-- === currentRecipe[0]) {
         $('.arrow-previous').css('display', 'none')
     }
 })
